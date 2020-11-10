@@ -1,7 +1,14 @@
 import java.awt.*;
 
+/**
+ *
+ */
 public abstract class Car implements Movable{
 
+
+	/**
+	 * Represents the number of doors of the current car
+	 */
 	protected int nrDoors; // Number of doors on the car
 	protected double enginePower; // Engine power of the car
 	protected double currentSpeed; // The current speed of the car
@@ -11,11 +18,17 @@ public abstract class Car implements Movable{
 
 	public String modelName; // The car model name
 
+	/**
+	 * An abstract constructor used by specifik car models
+	 */
 	protected Car() {
 		position = new Point();
 		heading = 0;
 	}
 
+	/**
+	 * @return The number of doors of the car
+	 */
 	public int getNrDoors(){
 		return nrDoors;
 	}
@@ -44,27 +57,28 @@ public abstract class Car implements Movable{
 		currentSpeed = 0;
 	}
 
-	public double speedFactor() {
-		// implemented in subclasses
-		return 0;
-	}
+	public abstract double speedFactor();
 
 	public void incrementSpeed(double amount) {
-		// implemented in subclasses
+		currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
 	}
 
 	public void decrementSpeed(double amount) {
-		// implemented in subclasses
+		currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
 	}
 
-	// TODO fix this method according to lab pm
-	public void gas(double amount){
-		incrementSpeed(amount);
+	public void gas(double amount) throws RuntimeException{
+		if (amount <= 1 && amount >= 0)
+			incrementSpeed(amount);
+		else
+			throw new RuntimeException("input was not in interval [0, 1]");
 	}
 
-	// TODO fix this method according to lab pm
-	public void brake(double amount){
-		decrementSpeed(amount);
+	public void brake(double amount) throws RuntimeException{
+		if (amount <= 1 && amount >= 0)
+			decrementSpeed(amount);
+		else
+			throw new RuntimeException("input was not in interval [0, 1]");
 	}
 
 	public Point getPosition(){
