@@ -3,6 +3,5 @@ public class main {
 		Car volvo = new Volvo240();
 		Car saab = new Saab95();
 
-
 	}
 }
