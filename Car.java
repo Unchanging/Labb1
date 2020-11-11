@@ -45,14 +45,14 @@ public abstract class Car implements Movable{
 		heading = 0;
 	}
 
-	/**
+	/**Returns the number of doors of the car.
 	 * @return The number of doors of the car.
 	 */
 	public int getNrDoors(){
 		return nrDoors;
 	}
 
-	/**
+	/**Returns the engine power of the car.
 	 * @return The engine power of the car.
 	 */
 	public double getEnginePower(){
@@ -60,7 +60,7 @@ public abstract class Car implements Movable{
 	}
 
 
-	/**
+	/**Returns the current speed of the car.
 	 * @return The current speed of the car.
 	 */
 	public double getCurrentSpeed(){
@@ -68,7 +68,7 @@ public abstract class Car implements Movable{
 	}
 
 
-	/**
+	/**Returns the color of the car.
 	 * @return The color of the car.
 	 */
 	public Color getColor(){
@@ -144,14 +144,14 @@ public abstract class Car implements Movable{
 			throw new RuntimeException("input was not in interval [0, 1]");
 	}
 
-	/**
+	/**Returns the car's current position as a Point.
 	 * @return The car's current position as a Point.
 	 */
 	public Point getPosition(){
 		return position;
 	}
 
-	/**
+	/**Return the car's current heading in radians.
 	 * @return The car's current heading in radians.
 	 */
 	public double getHeading() {
