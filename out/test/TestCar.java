@@ -131,4 +131,9 @@ public class TestCar {
 		saab2.setTurboOff();
 		assertTrue(initialSpeedFactor > saab2.speedFactor());
 	}
+
+	@Test
+	public void testModelName() {
+		assertTrue(volvo.getModelName().equals("Volvo240") && saab.getModelName().equals("Saab95"));
+	}
 }

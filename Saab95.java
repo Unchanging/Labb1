@@ -15,13 +15,9 @@ public class Saab95 extends Car{
      * Constructor for the Saab 95.
      */
     public Saab95(){
-        super();
+        super(2, Color.RED, 125, "Saab95");
 
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
         turboOn = false;
-        modelName = "Saab95";
         stopEngine();
     }
 
@@ -46,7 +42,7 @@ public class Saab95 extends Car{
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
-        return enginePower * 0.01 * turbo;
+        return getEnginePower() * 0.01 * turbo;
     }
 
 }

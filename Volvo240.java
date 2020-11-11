@@ -14,12 +14,7 @@ public class Volvo240 extends Car{
      * Constructor for a Volvo 240.
      */
     public Volvo240() {
-        super();
-
-        nrDoors = 4;
-        color = Color.black;
-        enginePower = 100;
-        modelName = "Volvo240";
+        super(4, Color.BLACK, 100, "Volvo240");
         stopEngine();
     }
 
@@ -28,6 +23,6 @@ public class Volvo240 extends Car{
      * @return the speed factor which determines how the car accelerates or decelerates.
      */
     public double speedFactor() {
-        return enginePower * 0.01 * trimFactor;
+        return getEnginePower() * 0.01 * trimFactor;
     }
 }

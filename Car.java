@@ -10,37 +10,43 @@ public abstract class Car implements Movable{
 	/**
 	 * Represents the number of doors of the current car.
 	 */
-	protected int nrDoors; // Number of doors on the car
+	private int nrDoors; // Number of doors on the car
 	/**
 	 * Represents the engine power of the car.
 	 */
-	protected double enginePower; // Engine power of the car
+	private double enginePower; // Engine power of the car
 	/**
 	 * Represents the current speed of the car.
 	 */
-	protected double currentSpeed; // The current speed of the car
+	private double currentSpeed; // The current speed of the car
 	/**
 	 * Represents the color of the car.
 	 */
-	protected Color color; // Color of the car
+	private Color color; // Color of the car
 	/**
 	 * Represents the current position of the car.
 	 */
-	protected Point position; // current position
+	private Point position; // current position
 	/**
 	 * Represents the current heading of the car.
 	 */
-	protected double heading; // current heading in radians
+	private double heading; // current heading in radians
 
 	/**
 	 * Represents the car model name.
 	 */
-	public String modelName; // The car model name
+	private String modelName; // The car model name
 
 	/**
 	 * An abstract constructor used by specific car models.
 	 */
-	protected Car() {
+	public Car(int nrDoors, Color color, double enginePower, String modelName) {
+
+		this.nrDoors = nrDoors;
+		this.color = color;
+		this.enginePower = enginePower;
+		this.modelName = modelName;
+
 		position = new Point();
 		heading = 0;
 	}
@@ -57,6 +63,14 @@ public abstract class Car implements Movable{
 	 */
 	public double getEnginePower(){
 		return enginePower;
+	}
+
+
+	/** Returns the model name of the car.
+	 * @return The model name of the car.
+	 */
+	public String getModelName() {
+		return modelName;
 	}
 
 
